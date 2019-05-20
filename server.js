@@ -1,4 +1,5 @@
 // Dependencies
+require('dotenv').config()
 var express = require("express");
 var mysql = require("mysql");
 
@@ -13,8 +14,8 @@ var PORT = process.env.PORT || 8080;
 var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
-  user: "root",
-  password: "4Tolkien",
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   database: "animals_db"
 });
 // Initiate MySQL Connection.
